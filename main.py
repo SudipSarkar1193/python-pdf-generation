@@ -15,7 +15,7 @@ app = FastAPI()
 # Enable CORS for React
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  
+    allow_origins=["http://localhost:5173","https://pen2pdf.vercel.app"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -31,7 +31,7 @@ async def generate_pdf(data: HTMLInput):
         html_file = "temp.html"
         pdf_file = "output.pdf"
 
-        print("SERVER STARTED")
+        print("REQUEST IS REACHED")
 
         # Save HTML to a file
         with open(html_file, "w", encoding="utf-8") as f:
